@@ -13,12 +13,14 @@ Hardware:
 5. RC transmitter
 6. RC receiver
 7. DHT22 temperature and humidity sensor
+8. Adafruit NeoPixel ring with 12 leds 5050
 
 Software dependencies:
 1. IRremoteESP8266 lib for arduino => https://github.com/markszabo/IRremoteESP8266
 2. RCSwitch lib for arduino => https://github.com/sui77/rc-switch
 3. Adafruit DHT Humidity & Temperature Unified Sensor Library => https://github.com/adafruit/DHT-sensor-library
-4. ESP wifi/pubsub libs...etc...
+4. Adafruit NeoPixel Library => https://github.com/adafruit/Adafruit_NeoPixel
+5. ESP wifi/pubsub Libraries...etc...
 
 You also need mqtt server, i prefer using mosquitto or some public, free servers
 
