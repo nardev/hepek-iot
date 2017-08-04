@@ -18,3 +18,9 @@ Software dependencies:
 1. IRremoteESP8266 lib for arduino => https://github.com/markszabo/IRremoteESP8266
 2. RCSwitch lib for arduino => https://github.com/sui77/rc-switch
 3. Adafruit DHT Humidity & Temperature Unified Sensor Library => https://github.com/adafruit/DHT-sensor-library
+4. ESP wifi/pubsub libs...etc...
+
+You also need mqtt server, i prefer using mosquitto or some public, free servers
+
+You can control IR devices like TV, Air condition etc...
+Also, you can buy some of RC ready sockets and nstantly start controlling some of the devices in your home. (keep in mind that such sockets have max current limitations lower than regular sockets, don't try to power up heating etc...)
