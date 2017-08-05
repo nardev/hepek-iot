@@ -27,9 +27,7 @@ You also need mqtt server, i prefer using mosquitto or some public, free servers
 You can control IR devices like TV, Air condition etc...
 Also, you can buy some of RC ready sockets and nstantly start controlling some of the devices in your home. (keep in mind that such sockets have max current limitations lower than regular sockets, don't try to power up heating etc...)
 
-
 ### Some Images:
-
-![hepek-for-edin-in](https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-in.jpg)
-![hepek-for-edin-light](https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-light.jpg)
-![hepek-for-edin-out](https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-out.jpg)
+![hepek-for-edin-out](https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-out.jpg){:height="222px" width="222px"}
+![hepek-for-edin-in](https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-in.jpg){:height="222px" width="222px"}
+![hepek-for-edin-light](https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-light.jpg){:height="222px" width="222px"}
