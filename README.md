@@ -30,6 +30,6 @@ Also, you can buy some of RC ready sockets and nstantly start controlling some o
 
 ### Some Images:
 
-![hepek-for-edin-in](hhttps://github.com/nardev/nodemcu-ito-transition/images/hepek-for-edin-in.jpg)
-![hepek-for-edin-light](hhttps://github.com/nardev/nodemcu-ito-transition/images/hepek-for-edin-light.jpg)
-![hepek-for-edin-out](hhttps://github.com/nardev/nodemcu-ito-transition/images/hepek-for-edin-out.jpg)
+![hepek-for-edin-in](https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-in.jpg)
+![hepek-for-edin-light](https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-light.jpg)
+![hepek-for-edin-out](https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-out.jpg)
