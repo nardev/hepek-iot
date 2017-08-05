@@ -28,6 +28,6 @@ You can control IR devices like TV, Air condition etc...
 Also, you can buy some of RC ready sockets and nstantly start controlling some of the devices in your home. (keep in mind that such sockets have max current limitations lower than regular sockets, don't try to power up heating etc...)
 
 ### Some Images:
-<img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-out.jpg" width="222" style="float: left; margin-right: 20px;">
-<img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-in.jpg" width="222" style="float: left; margin-right: 20px;">
-<img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-light.jpg" width="222" style="float: left; margin-right: 20px;">
+<img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-out.jpg" width="222"  align="left">&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-in.jpg" width="222"  align="left">&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-light.jpg" width="222"  align="left">&nbsp;&nbsp;
