@@ -63,6 +63,6 @@ The device is subscribed to a root topic and than according to a subtopics (whic
 ### The web interface under the development
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-web-frontpage.png" width="400" align="left">&nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-web-customsettings.png" width="400" align="left">&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-web-customsettings.png" width="300" align="left">&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-web-frontpage.png" width="300" align="left">&nbsp;&nbsp;
 </p>
