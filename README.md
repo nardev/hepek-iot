@@ -55,37 +55,14 @@ The device is subscribed to a root topic and than according to a subtopics (whic
 
 ### The device and
 <p align="center">
-  <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-out.jpg" width="264"  align="left">&nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-in.jpg" width="222"  align="left">&nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-light.jpg" width="305"  align="left">&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-out.jpg" width="264" />&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-in.jpg" width="222" />&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-light.jpg" width="305" />&nbsp;&nbsp;
 </p>
-
-
-
-
-
-## aaa
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### The web interface under the development
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-web-customsettings.png" width="300" align="left">&nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-web-frontpage.png" width="300" align="left">&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-web-customsettings.png" width="300" />&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-web-frontpage.png" width="300" />&nbsp;&nbsp;
 </p>
