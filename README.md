@@ -40,6 +40,17 @@ Preferably, edit settings.json with your mqtt settings. In order to test mqtt an
 
 Other than that, it should work out of box. (except IR/RC functionalities which are not placed here yet, i need some more testing...)
 
+## Instructions:
+
+Only for now it is dumb as it can be.
+Check src/main.cpp to see what mqtt topics and payloads you need to send to:
+* reset ESP
+* Start Config Portal on demand
+* Turn on neopixel light etc...
+
+The device is subscribed to a root topic and than according to a subtopics (which are predefined )
+
+
 ## Some Images:
 
 ### The device
@@ -50,14 +61,3 @@ Other than that, it should work out of box. (except IR/RC functionalities which 
 ### The web interface under the development
 <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-web-frontpage.png" align="left">&nbsp;&nbsp;
 <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-web-customsettings.png" align="left">&nbsp;&nbsp;
-
-
-## Instructions:
-
-Only for now it is dumb as it can be.
-Check src/main.cpp to see what mqtt topics and payloads you need to send to:
-* reset ESP
-* Start Config Portal on demand
-* Turn on neopixel light etc...
-
-The device is subscribed to a root topic and than according to a subtopics (which are predefined )
