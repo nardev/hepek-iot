@@ -1,0 +1,12 @@
+const char HTTP_HEAD[] PROGMEM            = "<!DOCTYPE html><html lang=\"en\"><head><meta name=\"viewport\"content=\"width=device-width,initial-scale=1,user-scalable=no\"/><title>{v}</title>";
+const char HTTP_STYLE[] PROGMEM           = "<style> .c{ text-align:center; }div,input{ padding:5px;font-size:1em;margin:3px 0;border:1px;border-color: #000; }input{ width:95%; }a {color: #fff;text-decoration:none; }body{ text-align:center;font:12px Arial;color: #fff;background: #333; }button{ border:0;border-radius:0.3rem;background-color: #00b1ce;color: #fff;line-height:2.4rem;font-size:1.2rem;width:100%; } .q{ float:right;width:64px;text-align:right; } .l{ color: #d86565;background: #aaa;background-size:1em; } .ap-name{ display:block;width:210px;float:left; } .ap-signal{ display:block;float:right;padding:2px 3px;color: #ea451c;background: #fff; } </style>";
+const char HTTP_SCRIPT[] PROGMEM          = "<script>function c(l){document.getElementById('s').value=l.innerText||l.textContent;document.getElementById('p').focus();} </script>";
+const char HTTP_HEAD_END[] PROGMEM        = "</head><body><div style=\"text-align:left;display:inline-block;min-width:260px;\"><img src=\"/eprom/logo.png\" />";
+const char HTTP_PORTAL_OPTIONS[] PROGMEM  = "<form action=\"/wifi\"method=\"get\"><button>Configure WiFi</button></form><br/><form action=\"/0wifi\"method=\"get\"><button>Configure WiFi(manually)</button></form><br/><form action=\"/customsettings\"method=\"get\"><button>Other settings</button></form><br/><form action=\"/i\"method=\"get\"><button>Info</button></form><br/><form action=\"/r\"method=\"post\"><button>Reset</button></form>";
+const char HTTP_ITEM[] PROGMEM            = "<div><a href='#p'onclick='c(this)'class='ap-name'>{v}</a>&nbsp;<span class='ap-signal q{i}'>{r}%</span></div>";
+const char HTTP_FORM_START[] PROGMEM      = "<form method='get'action='wifisave'><input id='s'name='s'length=32 placeholder='SSID'><br/><input id='p'name='p'length=64 type='password'placeholder='password'><br/>";
+const char HTTP_FORM_PARAM[] PROGMEM      = "<br/><input id='{i}'name='{n}'length='{l}'placeholder='{p}'value='{v}' {c}>";
+const char HTTP_FORM_END[] PROGMEM        = "<br/><button type='submit'>save</button></form>";
+const char HTTP_SCAN_LINK[] PROGMEM       = "<br/><div class=\"c\"><a href=\"/wifi\">Scan</a></div>";
+const char HTTP_SAVED[] PROGMEM           = "<div>Values Saved<br/>Trying to connect ESP to network.<br/>If it fails reconnect to AP to try again</div>";
+const char HTTP_END[] PROGMEM             = "</div></body></html>";

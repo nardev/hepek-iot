@@ -4,7 +4,7 @@
 #include <ESP8266WiFi.h>
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
-#include <../lib/WiFiManager/WiFiManager.h>
+#include <../lib/WiFiManagerCustom/WiFiManager.h>
 #include <FS.h>
 #include <ArduinoJson.h>
 #include <PubSubClient.h>
@@ -18,7 +18,6 @@
 #include <../lib/rc-switch/RCSwitch.h>
 #include <Adafruit_NeoPixel.h>
 #include <DHT.h>
-
 
 // LOAD SETTINGS
 // =============================================================

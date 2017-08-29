@@ -1,0 +1,25 @@
+body { text-align: center; font: 12px Arial; color: #fff; background: #292d2f; }
+.tabs { width: 65px; float: left; }
+.tabs div { background: #aaa; color: #fff; border: 1px; border-color: red; padding: 2px 5px; text-align: center; border-radius: 5px; margin: 3px 0px; width: 65px; }
+.tabs-content { margin-left: 85px; }
+.content { margin-left: 75px; }
+h3 { margin: 5px 0; }
+h3>span { display: block; border-bottom: 1px #fff; padding-bottom: 3px; margin-bottom: 5px; }
+.property-selector { background: #24282b; }
+hr { border-top: 1px dashed #fff; border-bottom: 0px solid #fff; border-right: 0px solid #fff; border-left: 0px solid #fff; }
+.mqtt-commands-conteiner { text-align: left; padding-bottom: 10px; margin: 0 0 10px 0; }
+.mqtt-settings-conteiner { text-align: left; padding-bottom: 10px; margin: 0 0 10px 0; }
+button { border: 0; border-radius: 0.3rem; background-color: #00b1ce; color: #fff; padding: 6px 9px; margin: 6px 0 6px 10px; }
+div.buttons { text-align: right; width: 100%; }
+div.form { text-align: center; width: 260px; }
+input, select { width: 100%; font-size: 1em; box-sizing: border-box; padding: 8px 5px; border-radius: 3px; margin: 5px 0; -moz-border-radius: 3px; border-radius: 3px; border: 1px solid #333; }
+form { width: 100%; }
+table { width: 100%; }
+.mqtt-command-title { background: #555; color: #fff; text-transform: -moz-border-radius: 3px; border-radius: 3px; padding: 8px 5px; margin: 5px 0; }
+.mqtt-command-title-explanation { float: left; font-size: 15px; }
+#add-command, #delete-command { background: #d9534f; }
+button.delete-command { padding: 1px 5px; margin: 0px 2px; float: right; background: #d9534f; padding: 3px 11px; }
+button.hide-show-form { padding: 1px 5px; margin: 0px 2px; float: right; background: #00b1ce; padding: 3px 11px; }
+.clear-both { clear: both; }
+#response { text-align: center; }
+button.reset { width: 50%; }
