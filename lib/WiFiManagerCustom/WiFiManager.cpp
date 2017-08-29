@@ -816,18 +816,16 @@ void WiFiManager::uploadFilesToEprom() {
     if(upload.status == UPLOAD_FILE_START){
       String filename = upload.filename;
       if(!filename.startsWith("/")) filename = "/"+filename;
-      // Serial.print("handleFileUpload Name: ");
-      // Serial.println(filename);
-      fsUploadFile = SPIFFS.open(filename, "w");            // Open the file for writing in SPIFFS (create if it doesn't exist)
+
+      fsUploadFile = SPIFFS.open(filename, "w");
       filename = String();
     } else if(upload.status == UPLOAD_FILE_WRITE){
       if(fsUploadFile)
-        fsUploadFile.write(upload.buf, upload.currentSize); // Write the received bytes to the file
+        fsUploadFile.write(upload.buf, upload.currentSize);
     } else if(upload.status == UPLOAD_FILE_END){
-      if(fsUploadFile) {                                    // If the file was successfully created
-        fsUploadFile.close();                               // Close the file again
-        // Serial.print("handleFileUpload Size: "); Serial.println(upload.totalSize);
-        server->sendHeader("Location","/success.html");      // Redirect the client to the success page
+      if(fsUploadFile) {
+        fsUploadFile.close();
+        server->sendHeader("Location","/success.html");      
         server->send(303);
       } else {
         server->send(500, "text/plain", "500: couldn't create file");
