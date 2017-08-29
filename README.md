@@ -58,9 +58,9 @@ The device is subscribed to a root topic and than according to a subtopics (whic
 <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-in.jpg" width="222"  align="left">&nbsp;&nbsp;
 <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-light.jpg" width="305"  align="left">&nbsp;&nbsp;
 
-<br />
 
 ### The web interface under the development
-
-<img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-web-frontpage.png" width="400" align="left">&nbsp;&nbsp;
-<img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-web-customsettings.png" width="400" align="left">&nbsp;&nbsp;
+<p align="center">
+  <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-web-frontpage.png" width="400" align="left">&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-web-customsettings.png" width="400" align="left">&nbsp;&nbsp;
+</p>
