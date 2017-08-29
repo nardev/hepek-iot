@@ -1,0 +1,45 @@
+{
+  "mqtt": {
+    "device_id": "hepek",
+    "hostname": "",
+    "port": "",
+    "username": "",
+    "password": ""
+  },
+"mqtt_commands": {
+    "0": {
+      "device_id": "hepek",
+      "type": "rc-switch",
+      "name": "socket_main_light0",
+      "message": "on",
+      "code": "123456"
+    },
+    "1": {
+      "device_id": "hepek",
+      "type": "rc-switch",
+      "name": "socket_main_light0",
+      "message": "off",
+      "code": "654321"
+    },
+    "2": {
+      "device_id": "hepek",
+      "type": "relay-pin",
+      "name": "socket_main_light2",
+      "message": "on",
+      "code": "123456"
+    },
+    "3": {
+      "device_id": "hepek",
+      "type": "ir-switch",
+      "name": "socket_main_light",
+      "message": "on",
+      "code": "{get_from_config_file_no_31}"
+    }
+  },
+  "neopixel": {
+    "color": "#ffffff",
+    "red": "171",
+    "green": "37",
+    "blue": "113"
+  }
+}
