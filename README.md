@@ -60,6 +60,29 @@ The device is subscribed to a root topic and than according to a subtopics (whic
   <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-for-edin-light.jpg" width="305"  align="left">&nbsp;&nbsp;
 </p>
 
+
+
+
+
+## aaa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### The web interface under the development
 
 <p align="center">
