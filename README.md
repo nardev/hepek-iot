@@ -68,6 +68,7 @@ The device is subscribed to a root topic and than according to a subtopics (whic
 </p>
 
 
-### Updates
+## Updates:
 
+#### 31.08.2017
 I recently found a project called "SmartMote" at kickstarter. Regarding the differences, i only didn't plan to provide integration with Alexa and similar devices... someone else would have to do that :D Everything else i plan to have here too.
