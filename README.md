@@ -66,3 +66,8 @@ The device is subscribed to a root topic and than according to a subtopics (whic
 <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-web-customsettings.png" width="300" />&nbsp;&nbsp;
   <img src="https://raw.githubusercontent.com/nardev/nodemcu-ito-transition/master/images/hepek-web-frontpage.png" width="300" />&nbsp;&nbsp;
 </p>
+
+
+### Updates
+
+I recently found a project called "SmartMote" at kickstarter. Regarding the differences, i only didn't plan to provide integration with Alexa and similar devices... someone else would have to do that :D Everything else i plan to have here too.
