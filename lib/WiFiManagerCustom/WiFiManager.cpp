@@ -747,13 +747,14 @@ void WiFiManager::handleCustomSettingsSave() {
 
     DynamicJsonBuffer postDataJB;
     JsonObject& postData = postDataJB.parseObject(server->arg("hepekData"));
-    const char* firstKey = postData.begin()->key;
+    JsonObject::iterator firstKey = postData.begin();
+    //const char* firstKey = postData.begin()->key;
 
     DynamicJsonBuffer configFileJB;
     File configFile = SPIFFS.open("/settings.json", "r");
     JsonObject& settings = configFileJB.parseObject(configFile);
 
-    if (!postData.success() || !configFile || !settings.success() || !settings.containsKey(firstKey)) {
+    if (!postData.success() || !configFile || !settings.success() || !settings.containsKey(firstKey->key)) {
       Serial.println("containsKey failed");
       server->send(200, "text/json", "{error:true}");
       return;
@@ -763,11 +764,11 @@ void WiFiManager::handleCustomSettingsSave() {
     JsonObject& newSettings = newSettingsJB.createObject();
     JsonVariant temp;
 
-    temp = postData.get<JsonVariant>(firstKey);
-    settings.set(firstKey,temp);
+    temp = postData.get<JsonVariant>(firstKey->key);
+    settings.set(firstKey->key,temp);
     File configFileNew = SPIFFS.open("/settings.json", "w");
 
-    // settings.printTo(configFileNew);
+    settings.printTo(configFileNew);
 
   configFile.close();
 
