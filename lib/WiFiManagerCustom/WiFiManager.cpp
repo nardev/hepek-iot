@@ -747,14 +747,13 @@ void WiFiManager::handleCustomSettingsSave() {
 
     DynamicJsonBuffer postDataJB;
     JsonObject& postData = postDataJB.parseObject(server->arg("hepekData"));
-    JsonObject::iterator firstKey = postData.begin();
-    Serial.println(firstKey->key);
+    const char* firstKey = postData.begin()->key;
 
     DynamicJsonBuffer configFileJB;
     File configFile = SPIFFS.open("/settings.json", "r");
     JsonObject& settings = configFileJB.parseObject(configFile);
 
-    if (!postData.success() || !configFile || !settings.success() || !settings.containsKey(firstKey->key)) {
+    if (!postData.success() || !configFile || !settings.success() || !settings.containsKey(firstKey)) {
       Serial.println("containsKey failed");
       server->send(200, "text/json", "{error:true}");
       return;
@@ -764,11 +763,11 @@ void WiFiManager::handleCustomSettingsSave() {
     JsonObject& newSettings = newSettingsJB.createObject();
     JsonVariant temp;
 
-    temp = postData.get<JsonVariant>(firstKey->key);
-    settings.set(firstKey->key,temp);
+    temp = postData.get<JsonVariant>(firstKey);
+    settings.set(firstKey,temp);
     File configFileNew = SPIFFS.open("/settings.json", "w");
 
-    settings.printTo(configFileNew);
+    // settings.printTo(configFileNew);
 
   configFile.close();
 
@@ -825,7 +824,7 @@ void WiFiManager::uploadFilesToEprom() {
     } else if(upload.status == UPLOAD_FILE_END){
       if(fsUploadFile) {
         fsUploadFile.close();
-        server->sendHeader("Location","/success.html");      
+        server->sendHeader("Location","/success.html");
         server->send(303);
       } else {
         server->send(500, "text/plain", "500: couldn't create file");

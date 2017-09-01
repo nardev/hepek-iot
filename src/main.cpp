@@ -19,8 +19,50 @@
 #include <Adafruit_NeoPixel.h>
 #include <DHT.h>
 
+
 // LOAD SETTINGS
 // =============================================================
+
+#define  DEVICE_NAME  = "edin"
+
+struct JsonBundle {
+  public:
+    void parse(const char* json) {
+      _jsonBuffer = new DynamicJsonBuffer();
+      _jsonVariant = _jsonBuffer->parseObject(json);
+    }
+
+    void parse(Stream& json) {
+      _jsonBuffer = new DynamicJsonBuffer();
+      _jsonVariant = _jsonBuffer->parseObject(json);
+    }
+
+    const JsonObject& root() const {
+      return _jsonVariant;
+    }
+
+    const JsonObject& getNode(String key) const {
+      JsonObject& obj = _jsonVariant.as<JsonObject>().get<JsonVariant>(key);
+      return obj;
+    }
+
+  private:
+    DynamicJsonBuffer* _jsonBuffer;
+    JsonVariant _jsonVariant;
+};
+
+JsonBundle settings;
+
+void getSettings() {
+  DynamicJsonBuffer configFileJB;
+  File configFile = SPIFFS.open("/settings.json", "r");
+
+  if (!configFile) {
+     Serial.println("Failed to open config file");
+  }
+
+  settings.parse(configFile);
+}
 
 
 // EVERYTHING RELATED TO NEOPIXEL
@@ -165,59 +207,52 @@ PubSubClient client(espClient);
 void callback(char* topic, byte* message, unsigned int length) {
   Serial.print(topic);
 
-  if ((strcmp(topic,"hepek/ota") == 0) && (char)message[0] == '1') {
-    client.publish("hepek","idemo OTA...");
+  if (strcmp(topic,"edin/getSensor/temperature")==0) {
+    client.publish("edin/temperature",String(getTemperature()).c_str());
+  } else if (strcmp(topic,"edin/getSensor/humidity")==0) {
+    client.publish("edin/humidity",String(getHumidity()).c_str());
+  }
+
+  if ((strcmp(topic,"edin/light") == 0) && (char)message[0] == '1') {
+    turnNeopixelOn(pixels.Color(0, 0, 64), 100);
+  } else if ((strcmp(topic,"edin/light") == 0) && (char)message[0] == '0') {
+    turnNeopixelOn(pixels.Color(0,0,0), 25);
+  }
+
+  if ((strcmp(topic,"edin/config") == 0) && (char)message[0] == '1') {
+    startConfigPortal();
+  }
+
+  if ((strcmp(topic,"edin/ping") == 0)) {
+    client.publish("edin/ping","echo...");
     delay(2000);
     activateOTA();
   }
 
-  if ((strcmp(topic,"hepek/config") == 0) && (char)message[0] == '1') {
-    startConfigPortal();
-  }
-
-  if ((strcmp(topic,"hepek/reset")==0) && (char)message[0] == '1') {
-    client.publish("hepek/reset","idemo reset...");
+  if ((strcmp(topic,"edin/reset")==0) && (char)message[0] == '1') {
+    client.publish("edin/reset","idemo reset...");
     delay(5000);
     ESP.reset();
     delay(2000);
   }
 
-  if ((strcmp(topic,"hepek/light") == 0) && (char)message[0] == '1') {
-    turnNeopixelOn(pixels.Color(0, 0, 64), 100);
-  } else if ((strcmp(topic,"hepek/light") == 0) && (char)message[0] == '0') {
-    turnNeopixelOn(pixels.Color(0,0,0), 25);
-  }
-
-  if (strcmp(topic,"hepek/getSensor/temperature")==0) {
-    client.publish("hepek/temperature",String(getTemperature()).c_str());
-  } else if (strcmp(topic,"hepek/getSensor/humidity")==0) {
-    client.publish("hepek/humidity",String(getHumidity()).c_str());
+  if ((strcmp(topic,"edin/ota") == 0) && (char)message[0] == '9') {
+    client.publish("edin","idemo OTA...");
+    delay(2000);
+    activateOTA();
   }
 
 }
 
+
 // =============================================================
 
 void setMQTT() {
-  DynamicJsonBuffer configFileJB;
-  File configFile = SPIFFS.open("/settings.json", "r");
-
-  if (!configFile) {
-    Serial.println("Failed to open config file");
-  }
-
-  JsonObject& settings = configFileJB.parseObject(configFile);
-  JsonObject& mqtt = settings["mqtt"];
-
-  if (!settings.success()) {
-     Serial.println("Failed to parse config file");
-   }
-
-  const char* mqttDeviceId = mqtt["device_id"];
-  const char* mqttServer = mqtt["hostname"];
-  int mqttPort = mqtt["port"];
-  const char* mqttUser = mqtt["username"];
-  const char* mqttPassword = mqtt["password"];
+  const char* mqttDeviceId = settings.getNode("mqtt")["device_id"];
+  const char* mqttServer = settings.getNode("mqtt")["hostname"];
+  int mqttPort = settings.getNode("mqtt")["port"];
+  const char* mqttUser = settings.getNode("mqtt")["username"];
+  const char* mqttPassword = settings.getNode("mqtt")["password"];
 
   client.setServer(mqttServer, mqttPort);
   while (!client.connected()) {
@@ -226,8 +261,7 @@ void setMQTT() {
       if (client.connect(mqttDeviceId, mqttUser, mqttPassword)) {
         Serial.println("connected");
         client.publish("outTopic","resetovo se...");
-        client.subscribe("hepek");
-        client.subscribe("hepek/#");
+        client.subscribe("edin/#");
         client.setCallback(callback);
       } else {
         Serial.print("failed with state ");
@@ -250,15 +284,20 @@ void setup() {
   Serial.begin(115200);
   Serial.println(WiFi.status());
 
-  setNeopixel();
   setFileSystem();
+  getSettings();
+  setNeopixel();
   startWiFiManager();
   setMQTT();
 
 }
 
 void loop() {
-  delay(1000);
-  yield();
   client.loop();
+  yield();
+
+  settings.getNode("mqtt").printTo(Serial);
+
+
+
 }
